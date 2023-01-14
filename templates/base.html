@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App - {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-icons/bootstrap-icons.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="sideBar">
+            <h2>Task App</h2>
+
+            <div class="sideBarItems">
+                <ul class="sideBarMenu">
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'tasks' %}">
+                        <li class="item"><i class="bi bi-clock"></i>Tasks</li>
+                    </a>
+                    <a href="{% url 'favorite' %}">
+                        <li class="item"><i class="bi bi-heart"></i>Favorites <span class="badge">{{ favs }}</span></li>
+                    </a>
+                    <a href="{% url 'completed' %}">
+                        <li class="item"><i class="bi bi-check2-all"></i>Incomplete <span class="badge">
+                                {{count}}</span>
+                        </li>
+                    </a>
+                    <a href="{% url 'deleted' %}">
+                        <li class="item"><i class="bi bi-trash"></i>Deleted</li>
+                    </a>
+                    <a href="{% url 'logout' %}">
+                        <li class="item"><i class="bi bi-door-open-fill"></i>Logout</li>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}">
+                        <li class="item"><i class="bi bi-person"></i>Login</li>
+                    </a>
+                    <a href="{% url 'signup' %}">
+                        <li class="item"><i class="bi bi-people"></i>Signup</li>
+                    </a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="app-Body">
+            {% block body %}
+
+
+            {% endblock body %}
+        </div>
+    </main>
+
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

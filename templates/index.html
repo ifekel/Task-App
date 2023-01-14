@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home {% endblock %}
+
+
+{% block body %}
+
+<div class="task-top-banner">
+    <a href="{% url 'create' %}">
+        <h2><i class="bi bi-plus"></i></h2>
+    </a>
+    <h2>{{ request.user|title }}</h2>
+</div>
+
+<div class="tasks">
+    {% for task in tasks reversed %}
+    {% if task.complete == True %}
+    <a href="{% url 'task_detail' task.id %}" style="text-decoration: none; color: white;">
+        <div class="task2">
+            <h3>{{ task.title }}</h3>
+            <p style="color: white;">{{ task.description }}</p>
+            <h5>{{ task.date_created }}</h5>
+            <!-- <div class="task-actions">
+                            <p><i class="bi bi-heart"></i></p>
+                            <p><i class="bi bi-circle"></i></p>
+                        </div> -->
+        </div>
+    </a>
+    {% else %}
+    <a href="{% url 'task_detail' task.id %}" style="text-decoration: none; color: white;">
+        <div class="task">
+            <h3>{{ task.title }}</h3>
+            <p style="color: white;">{{ task.description }}</p>
+            <h5>{{ task.date_created }}</h5>
+            <!-- <div class="task-actions">
+                            <p><i class="bi bi-heart"></i></p>
+                            <p><i class="bi bi-circle"></i></p>
+                        </div> -->
+        </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock body %}

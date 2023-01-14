@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Favorite Tasks {% endblock %}
+
+
+{% block body %}
+
+<div class="task-top-banner">
+    <a href="{% url 'favorite' %}" style="text-decoration: none; color: white;">
+        <h2>Favorites</h2>
+    </a>
+    <h2>{{ request.user|title }}</h2>
+</div>
+
+<div class="tasks">
+    {% for task in tasks %}
+    {% if task.favorite == True %}
+    {% if task.complete == True %}
+    <div class="task2">
+        <h3>{{ task.title }}</h3>
+        <p style="color: white;">{{ task.description }}</p>
+        <h5>{{ task.date_created }}</h5>
+        <!-- <div class="task-actions">
+                        <p><i class="bi bi-heart"></i></p>
+                        <p><i class="bi bi-circle"></i></p>
+                    </div> -->
+    </div>
+    {% else %}
+    <div class="task">
+        <h3>{{ task.title }}</h3>
+        <p style="color: white;">{{ task.description }}</p>
+        <h5>{{ task.date_created }}</h5>
+        <!-- <div class="task-actions">
+                            <p><i class="bi bi-heart"></i></p>
+                            <p><i class="bi bi-circle"></i></p>
+                        </div> -->
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock body %}

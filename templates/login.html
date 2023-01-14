@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App - {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-icons/bootstrap-icons.css' %}">
+</head>
+
+<body>
+    <div class="form-login-body">
+        <form action="login_form" method="post">
+            <h2 style="color: white;">Login</h2>
+            {%for message in messages %}
+            <h4 style="color: white; font-size: 24px;">{{ message }}</h4>
+            {% endfor %}
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="passord">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <span><a href="{% url 'signup' %}">Did you forget your password?</a></span>
+            <div class="form-group">
+                <input type="submit" value="LOGIN">
+            </div>
+            <span><a href="{% url 'signup' %}">Don't have an account?</a></span>
+        </form>
+    </div>
+
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

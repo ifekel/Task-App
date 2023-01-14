@@ -1,0 +1,254 @@
+:root {
+    --color-primary: #070B44;
+    --color-secondary: #000000;
+    --color-alternate: #1F0977;
+    --font-primary: Segoe Script;
+    --font-secondary: Fira Sans;
+    --font-alternate: NSimSun;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* height: 100%; */
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+
+.sideBar {
+    width: 15%;
+    background-color: var(--color-secondary);
+    height: 100vh;
+    padding: 10px;
+    position: fixed;
+}
+
+.sideBarMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.sideBar h2 {
+    font-family: var(--font-primary);
+    color: white;
+    text-align: center;
+    margin-top: 19%;
+}
+
+.sideBar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sideBarItems {
+    padding: 10px;
+    margin-top: 70px;
+}
+
+.sideBarItems ul {
+    color: white;
+    list-style-type: none;
+    width: 100%;
+}
+
+.sideBarItems ul .bi {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.sideBarItems ul li {
+    font-size: 25px;
+    font-family: var(--font-primary);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sideBarItems ul li:hover {
+    background-color: #fff;
+    color: var(--color-primary);
+}
+
+.app-Body {
+    background-color: var(--color-primary);
+    width: 84%;
+    height: 100vh;
+    padding: 20px;
+    margin-left: 15%;
+}
+
+.task-top-banner {
+    /* background-color: lightgray; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.task-top-banner .bi {
+    font-size: 35px;
+    background-color: white;
+    border-radius: 50%;
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 800;
+    color: #000000;
+}
+
+.task-top-banner:nth-child(1) {
+    font-size: 1.6rem;
+    font-family: var(--font-secondary);
+    color: white;
+}
+
+.tasks {
+    padding: 10px;
+}
+
+.task {
+    width: 98%;
+    background-color: var(--color-secondary);
+    padding: 2px;
+    padding-left: 30px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    border-bottom: 7px solid red;
+}
+
+.task2 {
+    width: 98%;
+    background-color: var(--color-secondary);
+    padding: 2px;
+    padding-left: 30px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    border-bottom: 7px solid green;
+    color: white;
+}
+
+.task h3 {
+    font-family: var(--font-secondary);
+    color: white;
+}
+
+.task h5 {
+    color: white;
+    font-family: var(--font-alternate);
+}
+
+.task-actions {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 4%;
+    font-size: 18px;
+}
+
+.btn1 {
+    color: white;
+    padding: 15px;
+    background-color: blue;
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: sans-serif;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn2 {
+    color: white;
+    padding: 15px;
+    background-color: red;
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
+.btn1:hover {
+    background-color: rgb(2, 2, 216);
+}
+
+
+.btn2:hover {
+    background-color: rgb(207, 0, 0);
+}
+
+.form-login-body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-alternate);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-login-body form {
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-alternate));
+}
+
+.form-login-body form input[type=text], .form-login-body form input[type=password] {
+    width: 99%;
+    height: 50px;
+    /* margin-bottom: 20px; */
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.form-login-body form label {
+    font-size: 19px;
+    color: white;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+}
+
+.form-login-body form .form-group input[type=submit] {
+    width: 100%;
+    border: none;
+    height: 50px;
+    background-color: #0F07F2;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form-login-body form span a{
+    color: white;
+    font-family: sans-serif;
+    float: right;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.form-group-ch span {
+    color: white;
+    font-family: sans-serif;
+}  
+
+.form-group-ch input {
+    margin-bottom: 10px;
+}
+
+.badge {
+    background-color: var(--color-secondary);
+    float: right;
+    border-radius: 50%;
+    color: #fff;
+}
